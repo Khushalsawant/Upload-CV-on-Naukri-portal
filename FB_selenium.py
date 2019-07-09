@@ -48,11 +48,18 @@ user = "khushalsawant2010@gmail.com"
 pwd = "xxxxxxxx"
 
 chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--ignore-certificate-errors')
+chrome_options.add_argument('start-maximized')
+chrome_options.add_argument("--test-type")
+chrome_options.add_argument('--incognito')
+chrome_options.add_argument("--headless")  # Runs Chrome in headless mode.
+chrome_options.add_argument('--no-sandbox') # # Bypass OS security model
+chrome_options.add_argument('disable-infobars')
 
 driver = webdriver.Chrome(chrome_options=chrome_options)
 
 #driver.get("http://www.facebook.com")
-driver.maximize_window()
+#driver.maximize_window()
 driver.get("https://www.naukri.com/nlogin/login")
 
 actions=ActionChains(driver)
